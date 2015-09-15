@@ -285,7 +285,7 @@ def _scrape_media(url, autoplay=False, maxwidth=600, force=False,
             media = mediaByURL.media
 
     # Otherwise, scrape it
-    if not media:
+    if not media or not hasattr(media, 'thumbnail_url'):
         media_object = secure_media_object = None
         thumbnail_image = thumbnail_url = thumbnail_size = None
 
